@@ -1,0 +1,22 @@
+{
+  "name": "robot-app",
+  "version": "1.0.0",
+  "description": "Web interface to make the pie do work",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://vyasmohan@bitbucket.org/vyasmohan/robot-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/vyasmohan/robot-app#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "http": "0.0.0",
+    "path": "^0.12.7",
+    "pug": "^2.0.0-rc.3"
+  }
+}
