@@ -5,4 +5,4 @@ deploy:
   provider: heroku
   api_key:
     secure: "a7358c59-83d1-4baa-843f-918e7e0f866d"
-  app: gmc-pi-robot
+  app: gmc-pi-app
