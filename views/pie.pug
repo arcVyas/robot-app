@@ -1,19 +1,41 @@
 html
   head
     title Pie Robot
-    link(rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css")
-  body
-    p
-      span  Hello #{title} 
+    link(rel="stylesheet" type="text/css" href="https://bootswatch.com/4-alpha/darkly/bootstrap.min.css")
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css')
 
-    .row
+  body(style="padding-left:20px;padding-right:10px")
+    .row.col-lg-12(style="padding-top:20px;padding-bottom:20px;")
+      h3 Control #{title} 
+
+    .row(style="padding-top:20px")
       .col-lg-3(align="center")
-        button.btn.btn-primary(type='button') FORWARD
+        button.btn.btn-primary(id='FORWARD') 
+          i.fa.fa-arrow-up
     .row
       .col-lg-1
-        button.btn.btn-primary(type='button') LEFT
+        button.btn.btn-primary(id='LEFT') 
+          i.fa.fa-arrow-left
       .col-lg-2(align="right")
-        button.btn.btn-primary(type='button') RIGHT
+        button.btn.btn-primary(id='RIGHT') 
+          i.fa.fa-arrow-right
     .row
       .col-lg-3(align="center")
-        button.btn.btn-primary(type='button') BACK
+        button.btn.btn-primary(id='BACK') 
+          i.fa.fa-arrow-down
+
+    .row(style="padding-top:40px")
+      .col-lg-3
+        h5 Instructions
+        hr(color="white")
+    .row
+      .col-lg-12(id="messages")
+
+  script(src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
+  script.
+    $(document).ready( function () {
+      $( "button" ).click(function() {
+        $('#messages').append($('<li>').text("MOVE " + this.id));
+      });
+
+    });
