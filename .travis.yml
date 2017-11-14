@@ -6,3 +6,8 @@ deploy:
   api_key:
     secure: $HEROKU_KEY
   app: gmc-pi-app
+stages:
+  - compile
+  - test
+  - name: deploy
+    if: branch = master
