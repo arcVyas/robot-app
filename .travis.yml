@@ -1,13 +1,17 @@
 language: node_js
 node_js:
   - "iojs"
-deploy:
-  provider: heroku
-  api_key:
-    secure: $HEROKU_KEY
-  app: gmc-pi-app
+jobs:
+  include:
+    - stage : test
+    - stage : deploy
+      script: skip
+      deploy:
+        provider: heroku
+        api_key:
+          secure: $HEROKU_KEY
+        app: gmc-pi-app
 stages:
-  - compile
   - test
   - name: deploy
     if: branch = master
